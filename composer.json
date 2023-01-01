@@ -1,0 +1,60 @@
+{
+  "name": "sageit/phalcon-rest",
+  "description": "Sage IT Component for Phalcon - REST JSON Parser services",
+  "keywords": [
+    "framework",
+    "phalcon",
+    "micro",
+    "rest",
+    "JSON",
+    "JWT"
+  ],
+  "authors": [
+    {
+      "name": "Daniel S. Davis",
+      "email": "daniel.davis@sageitsolutions.net"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/SageITSolutions/phalcon-rest/issues",
+    "source": "https://github.com/SageITSolutions/phalcon-rest",
+    "forum": "https://forum.phalconphp.com/",
+    "docs": "https://docs.phalconphp.com/",
+    "irc": "irc://irc.freenode.org/phalconphp",
+    "rss": "https://blog.phalconphp.com/rss",
+    "email": "daniel.davis@sageitsolutions.net"
+  },
+  "license": "MIT",
+  "require": {
+    "php": ">=7.0",
+    "ext-phalcon": "4.* || 5.*",
+    "sageit/phalcon-exception-handler": ">=1.01"
+  },
+  "require-dev": {
+    "codeception/verify": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Phalcon\\Common\\": "Phalcon/Common",
+      "Phalcon\\Di\\Service\\Common\\": "Phalcon/Di/Service/Common",
+      "Phalcon\\Di\\Service\\Encryption\\Security\\JWT\\": "Phalcon/Di/Service/Encryption/Security/JWT",
+      "Phalcon\\Di\\Service\\Request\\": "Phalcon/Di/Service/Request",
+      "Phalcon\\Di\\Service\\Response\\": "Phalcon/Di/Service/Response",
+      "Phalcon\\Encryption\\Security\\JWT\\": "Phalcon/Encryption/Security/JWT",
+      "Phalcon\\Encryption\\Security\\JWT\\Validator\\": "Phalcon/Encryption/Security/JWT/Validator",
+      "Phalcon\\Http\\Request\\": "Phalcon/Http/Request"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Phalcon\\Common\\": "Phalcon/Common",
+      "Phalcon\\Di\\Service\\Common\\": "Phalcon/Di/Service/Common",
+      "Phalcon\\Di\\Service\\Encryption\\Security\\JWT\\": "Phalcon/Di/Service/Encryption/Security/JWT",
+      "Phalcon\\Di\\Service\\Request\\": "Phalcon/Di/Service/Request",
+      "Phalcon\\Di\\Service\\Response\\": "Phalcon/Di/Service/Response",
+      "Phalcon\\Encryption\\Security\\JWT\\": "Phalcon/Encryption/Security/JWT",
+      "Phalcon\\Encryption\\Security\\JWT\\Validator\\": "Phalcon/Encryption/Security/JWT/Validator",
+      "Phalcon\\Http\\Request\\": "Phalcon/Http/Request"
+    }
+  }
+}
