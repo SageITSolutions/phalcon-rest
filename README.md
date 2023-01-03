@@ -14,7 +14,7 @@
 
   <p>
     Library for enhancing Micro applications with REST functionality, Bearer Token Parsing, and JSON Interpretation.
-    Includes Dynamic Validation Processing to make JWT extensible.
+    Includes Dynamic Validation Processing to make JWT extensible.  This is not a fully baked Micro Application, but rather a set of tools to enable additional out-of-the-box functionality for your own micro applications.
   </p>
 
 **[Explore the docs »](https://github.com/SageITSolutions/phalcon-rest)**
@@ -37,6 +37,7 @@
   - [Tools](TOOLS.md)
   - [JSON Headers](JSON.md)
   - [JWT Encryption](JWT.md)
+  - [Middleware](MIDDLEWARE.md)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
@@ -116,6 +117,7 @@ $di->register(new \Phalcon\Di\Service\Encryption\Security\JWT\Jwt());
 - [Tools](TOOLS.md)
 - [JSON Headers](JSON.md)
 - [JWT Encryption](JWT.md)
+- [Middleware](MIDDLEWARE.md)
 
 <!-- ROADMAP -->
 
