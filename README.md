@@ -13,7 +13,7 @@
 [![Phalcon Version](https://img.shields.io/packagist/dependency-v/sageit/phalcon-rest/ext-phalcon?label=Phalcon&logo=Phalcon%20Version&style=plastic)](https://packagist.org/packages/sageit/phalcon-rest)
 
   <p>
-    Base package for creating Micro applications with REST functionality, Bearer Token Parsing, and JSON Interpretation.
+    Library for enhancing Micro applications with REST functionality, Bearer Token Parsing, and JSON Interpretation.
     Includes Dynamic Validation Processing to make JWT extensible.
   </p>
 
@@ -32,8 +32,11 @@
 - [About The Project](#about-the-project)
   - [Built With](#built-with)
 - [Installation](#installation)
-- [Usage](#usage)
-  - [Implementing a Service (Example)](#implementing-a-service-example)
+- [Implementing a Service](#implementing-a-service)
+- [Sections](#sections)
+  - [Tools](TOOLS.md)
+  - [JSON Headers](JSON.md)
+  - [JWT Encryption](JWT.md)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
@@ -48,6 +51,7 @@
 ### Built With
 
 - [vscode](https://code.visualstudio.com/)
+- [Postman](https://www.postman.com/)
 - [php 8.1.1](https://www.php.net/releases/8_1_1.php)
 - [Phalcon 5](https://phalcon.io/en-us) (Micro Framework)
 
@@ -73,30 +77,45 @@ composer require sageit/phalcon-rest
 
 <!-- USAGE EXAMPLES -->
 
-## Usage
-
+## Implementing a Service
 This project consists of prebuild services that simply need to be added to DI for services.
 JWT assumes the presense of a config object in the DI with a JWT section. This can also be passed as a named array in the constructor, but the provided JWT service does not utilize this.
 
-### Implementing a Service (Example)
+**Config Register**
 
 One option is to have your application iterate services listed in the config object and register them
 
+```yaml
+services:
+  tools: Phalcon\Di\Service\Common\Tools
+  request: Phalcon\Di\Service\Request\Json
+  response: Phalcon\Di\Service\Response\Json
+  jwt: Phalcon\Di\Service\Encryption\Security\JWT\Jwt
+```
+
 ```php
-foreach ($services as $service => $class) {
+foreach ($config->services as $service => $class) {
   $di->register(new $class);
 }
 ```
 
-Another option is to manually define a service instance
+**Register Manually**
 
 ```php
 $di->register(new \Phalcon\Di\Service\Common\Tools());
 $di->register(new \Phalcon\Di\Service\Request\Json());
 $di->register(new \Phalcon\Di\Service\Response\Json());
+$di->register(new \Phalcon\Di\Service\Encryption\Security\JWT\Jwt());
 ```
 
 <br />
+
+<!-- SECTIONS -->
+
+## Sections
+- [Tools](TOOLS.md)
+- [JSON Headers](JSON.md)
+- [JWT Encryption](JWT.md)
 
 <!-- ROADMAP -->
 
