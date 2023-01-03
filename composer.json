@@ -28,7 +28,7 @@
   "require": {
     "php": ">=7.0",
     "ext-phalcon": "4.* || 5.*",
-    "sageit/phalcon-exception-handler": ">=1.01"
+    "sageit/phalcon-exception-handler": ">=1.03"
   },
   "require-dev": {
     "codeception/verify": "*"
