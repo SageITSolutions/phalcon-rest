@@ -42,7 +42,9 @@
       "Phalcon\\Di\\Service\\Response\\": "Phalcon/Di/Service/Response",
       "Phalcon\\Encryption\\Security\\JWT\\": "Phalcon/Encryption/Security/JWT",
       "Phalcon\\Encryption\\Security\\JWT\\Validator\\": "Phalcon/Encryption/Security/JWT/Validator",
-      "Phalcon\\Http\\Request\\": "Phalcon/Http/Request"
+      "Phalcon\\Http\\Request\\": "Phalcon/Http/Request",
+      "Phalcon\\Middleware\\": "Phalcon/Middleware",
+      "Phalcon\\Middleware\\JSON\\": "Phalcon/Middleware/JSON"
     }
   },
   "autoload-dev": {
@@ -54,7 +56,9 @@
       "Phalcon\\Di\\Service\\Response\\": "Phalcon/Di/Service/Response",
       "Phalcon\\Encryption\\Security\\JWT\\": "Phalcon/Encryption/Security/JWT",
       "Phalcon\\Encryption\\Security\\JWT\\Validator\\": "Phalcon/Encryption/Security/JWT/Validator",
-      "Phalcon\\Http\\Request\\": "Phalcon/Http/Request"
+      "Phalcon\\Http\\Request\\": "Phalcon/Http/Request",
+      "Phalcon\\Middleware\\": "Phalcon/Middleware",
+      "Phalcon\\Middleware\\JSON\\": "Phalcon/Middleware/JSON"
     }
   }
 }
