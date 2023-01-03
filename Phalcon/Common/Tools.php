@@ -106,7 +106,7 @@ class Tools extends \Phalcon\Di\Injectable{
      * @param array $array
      * @return bool
      */
-    public static function arrayHasAllKeys(array $keys, array $array) {
+    public function arrayHasAllKeys(array $keys, array $array) {
         foreach ($keys as $aKey) {
             if (!array_key_exists($aKey, $array)) {
                 return false;
@@ -134,7 +134,7 @@ class Tools extends \Phalcon\Di\Injectable{
      * @author Tega Oghenekohwo <tega@cottacush.com>
      * @return bool|string
      */
-    public static function getDateTime(){
+    public function getDateTime(){
         return date('Y-m-d H:i:s');
     }
 
@@ -143,17 +143,17 @@ class Tools extends \Phalcon\Di\Injectable{
      * @author Tega Oghenekohwo <tega@cottacush.com>
      * @return bool|string
      */
-    public static function getDate(){
+    public function getDate(){
         return date('Y-m-d');
     }
 
-    public static function appendArray(&$array, $add){
+    public function appendArray(&$array, $add){
         if(@!in_array($add,$array)){
             $array[] = $add;
         }
     }
 
-    public static function default(&$original, $default = null){
+    public function default(&$original, $default = null){
         if (!isset($original)){
             $original = $default;
             return true;
