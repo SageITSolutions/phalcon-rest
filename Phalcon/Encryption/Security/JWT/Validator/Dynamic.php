@@ -6,11 +6,24 @@ use \Phalcon\Encryption\Security\JWT\Token\Token;
 
 class Dynamic extends \Phalcon\Encryption\Security\JWT\Validator
 {
-    public function validateCallback(Callback $callback,$error)
+    protected ?string $validator;
+
+    /**
+     * Calls parent JWT Validator and extends with custom Validator Class
+     * @param Token $token to validate
+     * @param string|null $validator (Custom Validator Class)
+     * @param int|null $timeShift allowable offset (delay)
+     */
+    public function __construct(Token $token, string $validator = null, int $timeShift = null){
+        parent::__construct($token, $timeShift);
+        $this->validator = $validator;
+    }
+    public function validateCallback($method, Token $token)
     {
-        if(!call_user_func(array($callback->class, $callback->method))){
+        $result = call_user_func($this->validator . '::validate' . $method,$token);
+        if($result){
             throw new ValidatorException(
-                "Validation: " . $callback->error
+                "Validation: " . $result
             );
         }
     }

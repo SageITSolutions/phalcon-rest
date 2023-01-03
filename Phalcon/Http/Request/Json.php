@@ -61,11 +61,7 @@ class Json extends \Phalcon\Http\Request
      */
     public function getPost(string $name = null, $filters = null, $defaultValue = null, bool $notAllowEmpty = false, bool $noRecursive = false)
     {
-        $request = $this->getJsonRawBody(true);
-        if (!$request)
-            return false;
-        return $this->getHelper(
-            $request,
+        return $this->get(
             $name,
             $filters,
             $defaultValue,
