@@ -9,7 +9,7 @@ class Jwt implements \Phalcon\Di\ServiceProviderInterface
         $di->setShared(
             'jwt',
             function () {
-                return new \Phalcon\Encryption\Security\JWT\JWT();
+                return new \Phalcon\Encryption\Security\JWT\Jwt();
             }
         );
     }

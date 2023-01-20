@@ -8,7 +8,7 @@ use \Phalcon\Encryption\Security\JWT\Validator\Callback;
 use \Phalcon\Encryption\Security\JWT\Builder;
 use \Phalcon\Encryption\Security\JWT\Signer\Hmac;
 
-class JWT extends \Phalcon\Di\Injectable{
+class Jwt extends \Phalcon\Di\Injectable{
     protected $options;
 
     /**
@@ -140,12 +140,12 @@ class JWT extends \Phalcon\Di\Injectable{
             ->validateIssuer($this->options->issuer)
             ->validateNotBefore($time->notBefore)
             ->validateSignature($this->options->signer, $this->options->key);
-        
+
         foreach($this->options->validator_methods as $validation_callback){
             $validator->validateCallback($validation_callback, $token);
         }
-        
-        return true;
+
+        return $validator->hasErrors($this->logger);
     }
 
     protected function _getTimeStamps(){
