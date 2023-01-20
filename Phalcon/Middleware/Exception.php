@@ -14,10 +14,10 @@ class Exception implements MiddlewareInterface
      * Processes all exceptions as JSON response
      * @param Event $event
      * @param Micro $app
-     * @param \Exception $exception
+     * @param $exception
      * @return bool
      */
-    public function beforeException(Event $event, Micro $app, \Exception $exception)
+    public function beforeException(Event $event, Micro $app, $exception)
     {
         $handler = new \Phalcon\Exception\Handler(false);
         \Phalcon\Exception\Handler::convertException($exception);
